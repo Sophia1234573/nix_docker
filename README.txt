@@ -1,0 +1,1 @@
+docker run -it --rm --name docker-application -v ${pwd}:/usr/src/docker-app -w /usr/src/docker-app maven:3.8.1-jdk-11 mvn clean install

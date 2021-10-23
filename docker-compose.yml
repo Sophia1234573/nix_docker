@@ -1,0 +1,21 @@
+version: '3.1'
+services:
+  denisovich-app:
+    build: .
+
+    environment:
+      - POSTGRES_HOST: denisovich-database
+      - POSTGRES_USER: postgres
+      - POSTGRES_ROOT_PASSWORD: Kolenka2011
+      - POSTGRES_DB: nix_jdbc
+    ports:
+      - 8080:8080
+
+  denisovich-db:
+    image: postgres
+    volumes:
+    - postgres_data:/var/lib/postgres
+    environment:
+      POSTGRES_ROOT_PASSWORD: Kolenka2011
+volumes:
+  postgres_data:
